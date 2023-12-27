@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- ImageView for Question Image -->
+        <ImageView
+            android:id="@+id/imageViewQuestionImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop" />
+
+        <!-- Fact/Quote/Event TextView -->
+        <TextView
+            android:id="@+id/textViewFact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageViewQuestionImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Fact, Quote, or Event Goes Here"
+            android:textSize="20sp" />
+
+        <!-- True Button -->
+        <Button
+            android:id="@+id/buttonTrue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewFact"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_alignParentEnd="true"
+            android:text="True"
+            android:textSize="18sp" />
+
+        <!-- False Button -->
+        <Button
+            android:id="@+id/buttonFalse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewFact"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_alignParentStart="true"
+            android:text="False"
+            android:textSize="18sp" />
+
+        <!-- FrameLayout for feedback overlay -->
+        <FrameLayout
+            android:id="@+id/frameLayoutFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <!-- Green background for correct answer -->
+            <View
+                android:id="@+id/viewCorrectFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00FF00"
+                android:alpha="0" /> <!-- Initially invisible -->
+
+            <!-- Red background for wrong answer -->
+            <View
+                android:id="@+id/viewWrongFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF0000"
+                android:alpha="0" /> <!-- Initially invisible -->
+        </FrameLayout>
+
+        <!-- Score TextView -->
+        <TextView
+            android:id="@+id/textViewScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:text="Score: 0"
+            android:textSize="18sp"
+            android:layout_below="@+id/buttonTrue"/>
+
+        <!-- Progress TextView -->
+        <TextView
+            android:id="@+id/textViewProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Question 1 of X"
+            android:textSize="18sp"
+            android:layout_below="@+id/buttonFalse"/>
+    </RelativeLayout>
+</ScrollView>
